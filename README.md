@@ -1,7 +1,7 @@
-![](skymap.jpg)
-# Skymap
+![](skychart.jpg)
+# Skychart
 
-Skymap is a simple golang server and client library for the cosmos chain-registry. It provides a convenient
+Skychart is a simple golang server and client library for the cosmos chain-registry. It provides a convenient
 API, automatically updating itself to any changes in the github repo once a day. In the types package you will
 find go generated types from the JSON schemas.
 
@@ -10,13 +10,13 @@ find go generated types from the JSON schemas.
 Install the binary
 
 ```cli
-go install github.com/cmwaters/skymap@latest
+go install github.com/cmwaters/skychart@latest
 ```
 
 and run the server (this is for port :8080)
 
 ```cli
-skymap cosmos/chain-registry :8080
+skychart cosmos/chain-registry :8080
 ```
 
 ## API Reference
@@ -33,5 +33,6 @@ skymap cosmos/chain-registry :8080
 | `/v1/chain/{chain}/endpoints/seeds` | Returns a list of chain seeds | `[]PersistentPeerElement` |
 | `/v1/chain/{chain}/assets` | Returns all the native assets of the chain | `AssetList` |
 | `/v1/assets` | Returns an array of registered assets by display name | `[]string` |
-| `/v1/asset/{asset}` | Returns an asset by display name if it exists | `AssetElement` | 
+| `/v1/asset/{asset}` | Returns an asset by display name if it exists | `AssetElement` |
 
+Note that the `{chain}` search query can be both the chain name and chain id.

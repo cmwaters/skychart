@@ -8,7 +8,7 @@ import (
 
 	"github.com/gorilla/mux"
 
-	"github.com/cmwaters/skymap/types"
+	"github.com/cmwaters/skychart/types"
 )
 
 // Handler is the core object in the server package. It keeps an in-memory state

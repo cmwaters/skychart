@@ -8,7 +8,7 @@ import (
 	"net/http"
 	"net/url"
 
-	"github.com/cmwaters/skymap/types"
+	"github.com/cmwaters/skychart/types"
 )
 
 // Client is a simple wrapper for performing http requests to the registry and 

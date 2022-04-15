@@ -9,7 +9,7 @@ import (
 	"os/signal"
 	"syscall"
 
-	"github.com/cmwaters/skymap/server"
+	"github.com/cmwaters/skychart/server"
 )
 
 const (
@@ -33,12 +33,12 @@ func main() {
 
 func parseArgs() (string, string, error) {
 	if len(os.Args) > 3 || len(os.Args) == 1 {
-		return "", "", errors.New("expected 1 or 2 arguments. \n\nUsage: skymap registry-url [listen-addr]")
+		return "", "", errors.New("expected 1 or 2 arguments. \n\nUsage: skychart registry-url [listen-addr]")
 	}
 	registryUrl := os.Args[1]
 	_, err := url.Parse(registryUrl)
 	if err != nil {
-		return "", "", fmt.Errorf("unable to parse registry url: %w. \n\nUsage: skymap registry-url [listen-addr]", err)
+		return "", "", fmt.Errorf("unable to parse registry url: %w. \n\nUsage: skychart registry-url [listen-addr]", err)
 	}
 
 	if len(os.Args) == 2 {

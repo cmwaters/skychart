@@ -9,7 +9,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/cmwaters/skymap/types"
+	"github.com/cmwaters/skychart/types"
 )
 
 // Pull requests all registry information from a github repo and updates the
