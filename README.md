@@ -1,3 +1,4 @@
+![](skymap.jpg)
 # Skymap
 
 Skymap is a simple golang server and client library for the cosmos chain-registry. It provides a convenient
