@@ -11,7 +11,7 @@ import (
 	"github.com/cmwaters/skychart/types"
 )
 
-// Client is a simple wrapper for performing http requests to the registry and 
+// Client is a simple wrapper for performing http requests to the registry and
 // parsing the corresponding response
 type Client struct {
 	registryUrl string
@@ -30,8 +30,8 @@ func (c Client) Chains() ([]string, error) {
 	if err != nil {
 		return nil, err
 	}
-	var chains []string 
-	err = json.Unmarshal(bz, &chains) 
+	var chains []string
+	err = json.Unmarshal(bz, &chains)
 	if err != nil {
 		return nil, err
 	}
@@ -44,8 +44,8 @@ func (c Client) Assets() ([]string, error) {
 	if err != nil {
 		return nil, err
 	}
-	var assets []string 
-	err = json.Unmarshal(bz, &assets) 
+	var assets []string
+	err = json.Unmarshal(bz, &assets)
 	if err != nil {
 		return nil, err
 	}
@@ -58,7 +58,7 @@ func (c Client) Chain(chain string) (types.Chain, error) {
 		return types.Chain{}, err
 	}
 	var resp types.Chain
-	err = json.Unmarshal(bz, &resp) 
+	err = json.Unmarshal(bz, &resp)
 	if err != nil {
 		return types.Chain{}, err
 	}
@@ -71,7 +71,7 @@ func (c Client) Asset(name string) (types.AssetElement, error) {
 		return types.AssetElement{}, err
 	}
 	var resp types.AssetElement
-	err = json.Unmarshal(bz, &resp) 
+	err = json.Unmarshal(bz, &resp)
 	if err != nil {
 		return types.AssetElement{}, err
 	}
@@ -84,7 +84,7 @@ func (c Client) RPC(chain string) ([]types.GrpcElement, error) {
 		return []types.GrpcElement{}, err
 	}
 	var resp []types.GrpcElement
-	err = json.Unmarshal(bz, &resp) 
+	err = json.Unmarshal(bz, &resp)
 	if err != nil {
 		return []types.GrpcElement{}, err
 	}
@@ -97,7 +97,7 @@ func (c Client) GRPC(chain string) ([]types.GrpcElement, error) {
 		return []types.GrpcElement{}, err
 	}
 	var resp []types.GrpcElement
-	err = json.Unmarshal(bz, &resp) 
+	err = json.Unmarshal(bz, &resp)
 	if err != nil {
 		return []types.GrpcElement{}, err
 	}
@@ -110,7 +110,7 @@ func (c Client) REST(chain string) ([]types.GrpcElement, error) {
 		return []types.GrpcElement{}, err
 	}
 	var resp []types.GrpcElement
-	err = json.Unmarshal(bz, &resp) 
+	err = json.Unmarshal(bz, &resp)
 	if err != nil {
 		return []types.GrpcElement{}, err
 	}
@@ -123,7 +123,7 @@ func (c Client) Peers(chain string) ([]types.PersistentPeerElement, error) {
 		return []types.PersistentPeerElement{}, err
 	}
 	var resp []types.PersistentPeerElement
-	err = json.Unmarshal(bz, &resp) 
+	err = json.Unmarshal(bz, &resp)
 	if err != nil {
 		return []types.PersistentPeerElement{}, err
 	}
@@ -131,12 +131,12 @@ func (c Client) Peers(chain string) ([]types.PersistentPeerElement, error) {
 }
 
 func (c Client) Seeds(chain string) ([]types.PersistentPeerElement, error) {
-		bz, err := c.get(fmt.Sprintf("%s/v1/chain/%s/endpoints/seeds", c.registryUrl, chain))
+	bz, err := c.get(fmt.Sprintf("%s/v1/chain/%s/endpoints/seeds", c.registryUrl, chain))
 	if err != nil {
 		return []types.PersistentPeerElement{}, err
 	}
 	var resp []types.PersistentPeerElement
-	err = json.Unmarshal(bz, &resp) 
+	err = json.Unmarshal(bz, &resp)
 	if err != nil {
 		return []types.PersistentPeerElement{}, err
 	}
