@@ -3,8 +3,8 @@ package types
 // Asset lists are a similar mechanism to allow frontends and other UIs to fetch metadata
 // associated with Cosmos SDK denoms, especially for assets sent over IBC.
 type AssetList struct {
-	Assets  []AssetElement `json:"assets"`
-	ChainID string         `json:"chain_id"`
+	Assets    []AssetElement `json:"assets"`
+	ChainName string         `json:"chain_name"`
 }
 
 type AssetElement struct {

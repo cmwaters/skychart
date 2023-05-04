@@ -53,12 +53,13 @@ func (h *Handler) Pull(ctx context.Context) error {
 	// Index assets by display
 	assets := make([]string, 0)
 	for _, assetList := range h.assetList {
-		name := h.chainById[assetList.ChainID]
 		for _, asset := range assetList.Assets {
 			assets = append(assets, asset.Display)
-			h.chainByAsset[asset.Display] = name
+			h.chainByAsset[asset.Display] = assetList.ChainName
 		}
 	}
+
+	h.assets = assets
 
 	// update timestamp
 	h.lastUpdated = time.Now()
